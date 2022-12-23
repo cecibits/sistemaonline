@@ -10,8 +10,16 @@ print("Se deseja consultar a média anual de vendas, digite 6.")
 print("Se deseja consultar usuários que realizaram compras em todos os meses de um determinado ano, digite 7.")
 print("Se deseja consultar a quantidade de itens em estoque, digite 8.")
 print("Se deseja filtrar os produtos por masculino ou feminino, digite 9.")
-print("Caso não seja nenhuma das opções anteriores, digite 0 para ir ao novo menu.")
+print("Caso não seja nenhuma das opções anteriores, digite qualquer outra tecla para ir ao novo menu.")
 
+escolha = int(input())
+
+if(escolha == 1):
+	print("Ok! Vou apresentar os números das contas que temos para que você escolha uma e então apresento os pedidos associados a ela")
+	print(n.select("num_conta", "conta"))
+	conta_desejada = input()
+	print(f"Os pedidos associados a {conta_desejada} são:")
+	print(n.select("*", "pedidos", "id_conta = %s"))
 
 print(n.select("nome, valor", "comprador", "id = 1"))
 
